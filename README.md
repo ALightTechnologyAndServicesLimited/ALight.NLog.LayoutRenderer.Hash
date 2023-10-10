@@ -1,0 +1,2 @@
+# ALight.NLog.LayoutRenderer.Hash
+ 
