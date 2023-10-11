@@ -8,6 +8,11 @@ hash uses Murmur3 non-cryptographic hash algorithm, securehash uses SHA256 crypt
 
 Murmur3 is about 10 - 11 times faster than SHA256 and can be used for non-sensitive data. I think very sensitive data should not be logged anyway.
 
+The source code contains few unit tests and Benchmarks.
+
+Anouncement Blog: [Opensource NLog Hash LayoutRenderer](https://blog.alightservices.com/2023/10/opensource-nlog-hash-layoutrenderer.html)
+
+
 ### Personal Links:
 [Facebook - Kanti Arumilli](https://www.facebook.com/kanti.arumilli)
 
