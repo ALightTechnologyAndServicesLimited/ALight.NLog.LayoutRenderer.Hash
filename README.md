@@ -12,7 +12,7 @@ The source code contains few unit tests and Benchmarks.
 
 Anouncement Blog: [Opensource NLog Hash LayoutRenderer](https://blog.alightservices.com/2023/10/opensource-nlog-hash-layoutrenderer.html)
 
-Technical Blog: [Custom Layout Renderer for NLog using C# New]([https://blog.alightservices.com/2023/10/opensource-nlog-hash-layoutrenderer.html](https://www.alightservices.com/2023/10/11/custom-layout-renderer-for-nlog-using-c-new/))
+Technical Blog: [Custom Layout Renderer for NLog using C# New](https://blog.alightservices.com/2023/10/opensource-nlog-hash-layoutrenderer.html)
 
 
 
