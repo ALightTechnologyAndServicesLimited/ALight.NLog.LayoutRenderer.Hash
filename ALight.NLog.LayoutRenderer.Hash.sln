@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALight.NLog.LayoutRenderer.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALight.NLog.LayoutRenderer.Hash.Benchmarks", "ALight.NLog.LayoutRenderer.Hash.Benchmarks\ALight.NLog.LayoutRenderer.Hash.Benchmarks.csproj", "{FCDBBDC1-46D8-4F8E-AA23-AD40C0AB1D36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1", "Example1\Example1.csproj", "{A4F112B5-FAD3-49D1-B99E-E63A1D5C2C1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FCDBBDC1-46D8-4F8E-AA23-AD40C0AB1D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCDBBDC1-46D8-4F8E-AA23-AD40C0AB1D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCDBBDC1-46D8-4F8E-AA23-AD40C0AB1D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4F112B5-FAD3-49D1-B99E-E63A1D5C2C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4F112B5-FAD3-49D1-B99E-E63A1D5C2C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4F112B5-FAD3-49D1-B99E-E63A1D5C2C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4F112B5-FAD3-49D1-B99E-E63A1D5C2C1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
