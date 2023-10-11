@@ -18,5 +18,10 @@ namespace ALight.NLog.LayoutRenderer.Hash
 
             return String.Empty;
         }
+
+        protected override void CloseLayoutRenderer()
+        {
+            HashHelper.DisposeSHA256();
+        }
     }
 }

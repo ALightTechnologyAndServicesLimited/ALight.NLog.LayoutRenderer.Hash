@@ -2,6 +2,7 @@
 using NLog.LayoutRenderers;
 using NLog.LayoutRenderers.Wrappers;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 using NLogLib = NLog.LayoutRenderers;
