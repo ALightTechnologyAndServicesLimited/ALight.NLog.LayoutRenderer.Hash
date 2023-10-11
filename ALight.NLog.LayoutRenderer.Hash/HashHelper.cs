@@ -12,28 +12,30 @@ namespace ALight.NLog.LayoutRenderer.Hash
         private static ConcurrentQueue<MurmurHash3> murmurs = new ConcurrentQueue<MurmurHash3>();
         private static ConcurrentQueue<SHA256> sha256s = new ConcurrentQueue<SHA256>();
 
-        public static string HashSHA256(string value)
+        public static string HashSHA256(string value, bool objectPool = true)
         {
             if (String.IsNullOrEmpty(value)) return String.Empty;
 
-            SHA256 sha256Hash = GetSHA256();
+            SHA256 sha256Hash = GetSHA256(objectPool);
             byte[] bytes = sha256Hash.ComputeHash(GetBytes(value));
             var retVal = Convert.ToBase64String(bytes);
 
-            ReturnSHA256(sha256Hash);
+            if (objectPool)
+                ReturnSHA256(sha256Hash);
 
             return retVal;
         }
 
-        public static string HashMurmur(string value)
+        public static string HashMurmur(string value, bool objectPool = false)
         {
             if (String.IsNullOrEmpty(value)) return String.Empty;
 
-            var murmur = GetMurmur();
+            var murmur = GetMurmur(objectPool);
             var bytes = murmur.ComputeHash(GetBytes(value));
             var hash = Convert.ToBase64String(bytes);
 
-            ReturnMurmur(murmur);
+            if (objectPool)
+                ReturnMurmur(murmur);
 
             return hash;
         }
@@ -56,12 +58,16 @@ namespace ALight.NLog.LayoutRenderer.Hash
             murmurs.Enqueue(murmur);
         }
 
-        private static SHA256 GetSHA256()
+        private static SHA256 GetSHA256(bool objectPool)
         {
             SHA256 sha256 = null;
-            if (sha256s.TryDequeue(out sha256))
+
+            if (objectPool)
             {
-                return sha256;
+                if (sha256s.TryDequeue(out sha256))
+                {
+                    return sha256;
+                }
             }
 
             return SHA256.Create();
@@ -73,12 +79,15 @@ namespace ALight.NLog.LayoutRenderer.Hash
         }
 
 
-        private static MurmurHash3 GetMurmur()
+        private static MurmurHash3 GetMurmur(bool objectPool)
         {
-            MurmurHash3 murmur = null;
-            if (murmurs.TryDequeue(out murmur))
+            if (objectPool)
             {
-                return murmur;
+                MurmurHash3 murmur = null;
+                if (murmurs.TryDequeue(out murmur))
+                {
+                    return murmur;
+                }
             }
 
             return new MurmurHash3();

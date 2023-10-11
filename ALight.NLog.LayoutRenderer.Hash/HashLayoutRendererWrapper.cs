@@ -12,11 +12,20 @@ namespace ALight.NLog.LayoutRenderer.Hash
     [NLogLib.LayoutRenderer("hash")]
     public class HashLayoutRendererWrapper : WrapperLayoutRendererBase
     {
+        private bool objectPool = false;
+
+        public bool ObjectPool
+        {
+            get { return objectPool; }
+            set { objectPool = value; }
+        }
+
+
         protected override string Transform(string text)
         {
             if (!String.IsNullOrEmpty(text))
             {
-                return HashHelper.HashMurmur(text);
+                return HashHelper.HashMurmur(text, objectPool);
             }
 
             return String.Empty;
