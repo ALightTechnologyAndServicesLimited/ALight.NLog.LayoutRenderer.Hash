@@ -30,9 +30,11 @@ Murmur3: 20% slower, 16% lesser memory allocation
 
 
 
-**Planned enhancements:**
+**v0.0.3:**
 
 - Configurable Object pool use, default objectpool for SHA256, no objectpool for Mumur3.
+
+- Performance optimized usage for both algorithms
 
 
 ### Personal Links:
